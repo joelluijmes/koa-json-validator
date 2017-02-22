@@ -1,0 +1,7 @@
+{
+    "number": {
+        "isInt": {
+            "errorMessage": "Numbers only"
+        }
+    }
+}

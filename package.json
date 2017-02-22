@@ -1,0 +1,39 @@
+{
+  "name": "koa-json-validator",
+  "version": "1.0.0",
+  "description": "A koa middleware for the validator module taking a json object",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Joël Luijmes",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "validator": "^6.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "koa": "^1.2.5",
+    "koa-bodyparser": "^2.3.0",
+    "koa-router": "^5.4.0",
+    "mocha": "^3.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelluijmes/koa-json-validator.git"
+  },
+  "keywords": [
+    "koa",
+    "json",
+    "validator"
+  ],
+  "bugs": {
+    "url": "https://github.com/joelluijmes/koa-json-validator/issues"
+  },
+  "homepage": "https://github.com/joelluijmes/koa-json-validator#readme"
+}
