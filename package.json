@@ -4,7 +4,7 @@
   "description": "A koa middleware for the validator module taking a json object",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --bail"
   },
   "author": "Joël Luijmes",
   "license": "ISC",
