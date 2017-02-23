@@ -55,6 +55,18 @@ describe('lib/validator.js - test', () => {
             });
     });
 
+    it('should fail with message if parameter is not posted', (done) => {
+        chai.request(testServer)
+            .post('/giveErrorOnMissingParameter')
+            .end((err, res) => {
+                res.should.have.status(500);
+                res.should.be.json;
+                res.body.message.should.equal('Param missing');
+
+                done();
+            });
+    });
+
     it('should give default message on invalid parameter', (done) => {
         chai.request(testServer)
             .post('/defaultErrorOnInvalidParameter')

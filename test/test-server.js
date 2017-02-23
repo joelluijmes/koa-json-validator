@@ -42,6 +42,12 @@ router.post('/failOnMissingParameter', validator({
     param: 'isInt'
 }), complete);
 
+router.post('/giveErrorOnMissingParameter', validator({
+    param: {
+        errorMessage: 'Param missing'
+    }
+}), complete);
+
 router.post('/defaultErrorOnInvalidParameter', validator({
     param: 'isInt'
 }), complete);
