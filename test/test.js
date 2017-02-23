@@ -20,7 +20,9 @@ describe('lib/validator.js - test', () => {
     it('should fail on invalid validator', (done) => {
         chai.request(testServer)
             .post('/failOnInvalidValidator')
-            .send({param: 12})
+            .send({
+                param: 12
+            })
             .end((err, res) => {
                 res.should.have.status(500);
                 res.should.be.json;
@@ -33,7 +35,9 @@ describe('lib/validator.js - test', () => {
     it('should fail on validator who doesn\'t take any option', (done) => {
         chai.request(testServer)
             .post('/failOnInvalidOptionGiven')
-            .send({param: 12})
+            .send({
+                param: 12
+            })
             .end((err, res) => {
                 res.should.have.status(500);
                 res.should.be.json;
@@ -70,7 +74,9 @@ describe('lib/validator.js - test', () => {
     it('should give default message on invalid parameter', (done) => {
         chai.request(testServer)
             .post('/defaultErrorOnInvalidParameter')
-            .send({param: 'test'})
+            .send({
+                param: 'test'
+            })
             .end((err, res) => {
                 res.should.have.status(400);
                 res.should.be.json;
@@ -83,7 +89,9 @@ describe('lib/validator.js - test', () => {
     it('should give custom message on invalid parameter', (done) => {
         chai.request(testServer)
             .post('/customErrorOnInvalidParameter')
-            .send({param: 'test'})
+            .send({
+                param: 'test'
+            })
             .end((err, res) => {
                 res.should.have.status(400);
                 res.should.be.json;
@@ -91,5 +99,22 @@ describe('lib/validator.js - test', () => {
 
                 done();
             });
-        });
+    });
+
+    it('should work with nested parameter', (done) => {
+        chai.request(testServer)
+            .post('/nestedParameters')
+            .send({
+                param: {
+                    key: 'a',
+                    value: '1'
+                }
+            })
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.should.be.json;
+
+                done();
+            });
+    });
 });
