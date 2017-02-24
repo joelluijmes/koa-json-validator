@@ -101,6 +101,21 @@ describe('lib/validator.js - test', () => {
             });
     });
 
+    it('should give custom message on invalid parameter, simplified form   ', (done) => {
+        chai.request(testServer)
+            .post('/customErrorOnInvalidParameterSimpledForm')
+            .send({
+                param: 'test'
+            })
+            .end((err, res) => {
+                res.should.have.status(400);
+                res.should.be.json;
+                res.body.message.should.equal('Param is not a integer');
+
+                done();
+            });
+    });
+
     it('should work with nested parameter', (done) => {
         chai.request(testServer)
             .post('/nestedParameters')
