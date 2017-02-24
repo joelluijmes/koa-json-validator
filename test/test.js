@@ -133,7 +133,7 @@ describe('lib/validator.js - test', () => {
             });
     });
 
-    it.only('should work give message with nestedParameters', (done) => {
+    it('should work give message with nestedParameters', (done) => {
         chai.request(testServer)
             .post('/nestedParametersWithErrorMessage')
             .send({
