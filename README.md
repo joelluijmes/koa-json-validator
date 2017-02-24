@@ -1,4 +1,7 @@
 # koa-json-validator
+[![Build Status](https://img.shields.io/teamcity/http/lensert.com:8111/s/KoaJsonValidatorBuild.svg)](http://lensert.com:8111/project.html?projectId=KoaJsonValidator)
+[![npm version](https://badge.fury.io/js/koa-json-validator.svg)](https://badge.fury.io/js/koa-json-validator)
+
 A [koa](https://github.com/koajs/koa) middleware for [node-validator](https://github.com/chriso/validator.js) taking a json object
 inspired by [express-validator](https://github.com/ctavan/express-validator).
 
@@ -12,7 +15,7 @@ function.
 
 ## Installation
 ```
-npm install koa-json-validator
+npm install koa-json-validator --save
 ```
 
 ## Usage
