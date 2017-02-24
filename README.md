@@ -16,6 +16,9 @@ npm install koa-json-validator
 ```
 
 ## Usage
+see also [test-server.js](test-server.js)  
+
+#### Full Example
 ```javascript
 // libraries
 const koa = require('koa');
@@ -50,9 +53,7 @@ const registerValidation = {
             },
             errorMessage: 'Username must be between 3 and 9 characters'
         },
-        isAlphanumeric: {
-            errorMessage: 'Username must be alphanumeric'
-        }
+        isAlphanumeric: 'Username must be alphanumeric'
     },
     password: {
         isLength: {
