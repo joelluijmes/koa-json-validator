@@ -73,6 +73,15 @@ router.post('/nestedParameters', validator({
     }
 }), complete);
 
+router.post('/nestedParametersWithErrorMessage', validator({
+    param: {
+        key: {
+            isAlpha: 'param.key can only be alpha characters'
+        },
+        value: 'isInt'
+    }
+}), complete);
+
 module.exports = function() {
     app.use(router.routes());
     //app.use(router.allowedMethods());

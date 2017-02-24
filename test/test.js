@@ -132,4 +132,22 @@ describe('lib/validator.js - test', () => {
                 done();
             });
     });
+
+    it.only('should work give message with nestedParameters', (done) => {
+        chai.request(testServer)
+            .post('/nestedParametersWithErrorMessage')
+            .send({
+                param: {
+                    key: '123',
+                    value: '1'
+                }
+            })
+            .end((err, res) => {
+                res.should.have.status(400);
+                res.should.be.json;
+                res.body.message.should.equal('param.key can only be alpha characters');
+
+                done();
+            });
+    });
 });
