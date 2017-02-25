@@ -51,7 +51,7 @@ describe('lib/validator.js - test', () => {
         chai.request(testServer)
             .post('/failOnMissingParameter')
             .end((err, res) => {
-                res.should.have.status(500);
+                res.should.have.status(400);
                 res.should.be.json;
                 res.body.message.should.equal('Property param does not exist');
 
@@ -63,7 +63,7 @@ describe('lib/validator.js - test', () => {
         chai.request(testServer)
             .post('/giveErrorOnMissingParameter')
             .end((err, res) => {
-                res.should.have.status(500);
+                res.should.have.status(400);
                 res.should.be.json;
                 res.body.message.should.equal('Param missing');
 
