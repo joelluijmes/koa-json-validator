@@ -72,6 +72,17 @@ router.post('/customErrorOnInvalidParameterSimpledForm', validator({
     }
 }), complete);
 
+router.post('/customErrorOnValidationWithOptions', validator({
+    param: {
+        isInt: {
+            options: {
+                min: 3
+            },
+            errorMessage: 'Param must be bigger than 3'
+        }
+    }
+}), complete);
+
 router.post('/nestedParameters', validator({
     param: {
         key: 'isAlpha',
