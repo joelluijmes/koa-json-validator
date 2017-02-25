@@ -155,6 +155,7 @@ describe('lib/validator.js - test', () => {
                 }
             })
             .end((err, res) => {
+                console.log(res.body);
                 res.should.have.status(200);
                 res.should.be.json;
 
@@ -175,6 +176,20 @@ describe('lib/validator.js - test', () => {
                 res.should.have.status(400);
                 res.should.be.json;
                 res.body.message.should.equal('param.key can only be alpha characters');
+
+                done();
+            });
+    });
+
+    it('should work work when numbers (non-string) are posted', (done) => {
+        chai.request(testServer)
+            .post('/customErrorOnInvalidParameter')
+            .send({
+                param: 1
+            })
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.should.be.json;
 
                 done();
             });
